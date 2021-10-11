@@ -1,0 +1,8 @@
+# Directory
+.idea
+build/dev/database/*
+
+# Files
+!*.gitkeep
+.DS_Store
+*.log
