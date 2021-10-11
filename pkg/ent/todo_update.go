@@ -102,7 +102,7 @@ func (tu *TodoUpdate) Save(ctx context.Context) (int, error) {
 			}
 			mut = tu.hooks[i](mut)
 		}
-		if _, err := mut.Mutate(ctx, tu.mutation); err != nil {
+		if _, err = mut.Mutate(ctx, tu.mutation); err != nil {
 			return 0, err
 		}
 	}
@@ -288,7 +288,7 @@ func (tuo *TodoUpdateOne) Save(ctx context.Context) (*Todo, error) {
 			}
 			mut = tuo.hooks[i](mut)
 		}
-		if _, err := mut.Mutate(ctx, tuo.mutation); err != nil {
+		if _, err = mut.Mutate(ctx, tuo.mutation); err != nil {
 			return nil, err
 		}
 	}

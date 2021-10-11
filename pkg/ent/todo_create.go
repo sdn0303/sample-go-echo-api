@@ -93,7 +93,7 @@ func (tc *TodoCreate) Save(ctx context.Context) (*Todo, error) {
 			}
 			mut = tc.hooks[i](mut)
 		}
-		if _, err := mut.Mutate(ctx, tc.mutation); err != nil {
+		if _, err = mut.Mutate(ctx, tc.mutation); err != nil {
 			return nil, err
 		}
 	}
@@ -245,7 +245,7 @@ func (tcb *TodoCreateBulk) Save(ctx context.Context) ([]*Todo, error) {
 				}
 				return nodes[i], nil
 			})
-			for i := len(builder.hooks) - 1; i >= 0; i-- {
+			for i = len(builder.hooks) - 1; i >= 0; i-- {
 				mut = builder.hooks[i](mut)
 			}
 			mutators[i] = mut

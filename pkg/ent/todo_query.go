@@ -668,7 +668,12 @@ func (tgb *TodoGroupBy) sqlScan(ctx context.Context, v interface{}) error {
 	if err := tgb.driver.Query(ctx, query, args, rows); err != nil {
 		return err
 	}
-	defer rows.Close()
+	defer func(rows *sql.Rows) {
+		err := rows.Close()
+		if err != nil {
+			panic(err)
+		}
+	}(rows)
 	return sql.ScanSlice(rows, v)
 }
 
@@ -910,6 +915,11 @@ func (ts *TodoSelect) sqlScan(ctx context.Context, v interface{}) error {
 	if err := ts.driver.Query(ctx, query, args, rows); err != nil {
 		return err
 	}
-	defer rows.Close()
+	defer func(rows *sql.Rows) {
+		err := rows.Close()
+		if err != nil {
+			panic(err)
+		}
+	}(rows)
 	return sql.ScanSlice(rows, v)
 }

@@ -51,7 +51,7 @@ func (td *TodoDelete) Exec(ctx context.Context) (int, error) {
 			}
 			mut = td.hooks[i](mut)
 		}
-		if _, err := mut.Mutate(ctx, td.mutation); err != nil {
+		if _, err = mut.Mutate(ctx, td.mutation); err != nil {
 			return 0, err
 		}
 	}
