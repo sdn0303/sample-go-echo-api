@@ -3,15 +3,14 @@ package routes
 import (
 	"net/http"
 
-	"github.com/sdn0303/sample-go-echo-api/internal/app/interfaces/handlers"
-	"github.com/sdn0303/sample-go-echo-api/internal/app/usecase"
-
 	"github.com/labstack/echo/v4"
 	echoSwagger "github.com/swaggo/echo-swagger"
 
 	"github.com/sdn0303/sample-go-echo-api/config"
 	"github.com/sdn0303/sample-go-echo-api/internal/app/infrastructure/adapters"
 	"github.com/sdn0303/sample-go-echo-api/internal/app/infrastructure/repository"
+	"github.com/sdn0303/sample-go-echo-api/internal/app/infrastructure/server/handlers"
+	"github.com/sdn0303/sample-go-echo-api/internal/app/usecase"
 )
 
 // Routing struct for routing

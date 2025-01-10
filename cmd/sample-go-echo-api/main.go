@@ -9,7 +9,7 @@ import (
 
 	"github.com/sdn0303/sample-go-echo-api/config"
 	"github.com/sdn0303/sample-go-echo-api/internal/app/infrastructure/adapters"
-	"github.com/sdn0303/sample-go-echo-api/internal/app/interfaces/routes"
+	"github.com/sdn0303/sample-go-echo-api/internal/app/infrastructure/server/routes"
 	"github.com/sdn0303/sample-go-echo-api/pkg/utils"
 )
 
