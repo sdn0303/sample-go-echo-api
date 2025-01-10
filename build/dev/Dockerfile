@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine
+FROM golang:1.23-alpine
 WORKDIR $GOPATH/src/github.com/sdn0303/smaple-go-echo-api
 
 COPY ./go.mod .

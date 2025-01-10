@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine
+FROM golang:1.23-alpine
 ENV GO111MODULE=on
 
 RUN apk update && apk add --no-cache gcc make git alpine-sdk build-base libc-dev binutils-gold
